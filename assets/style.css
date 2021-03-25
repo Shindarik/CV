@@ -118,6 +118,7 @@ nav .link{
     transform: translateX(-100px);
     list-style: none;
     text-transform: uppercase;
+    user-select: none;
     visibility: hidden;
     opacity: 0;
     transition: 0.5s;
