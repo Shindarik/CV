@@ -12,7 +12,7 @@ body{
     margin: 0;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
-    cursor: url("../images/cursor.png"), auto;
+    cursor: url("../images/cursor.png"), pointer;
 }
 
 body.active{
