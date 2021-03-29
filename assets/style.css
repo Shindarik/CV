@@ -12,7 +12,7 @@ body{
     margin: 0;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
-    cursor: url("../images/burger.svg"), auto;
+    cursor: url("../images/cursor.png"), auto;
 }
 
 body.active{
