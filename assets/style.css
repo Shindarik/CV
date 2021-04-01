@@ -4,11 +4,30 @@
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar {  
+    width: 15px;
+    border-radius: 4px;
+    background: linear-gradient(to bottom, red,orange,yellow,green,blue, indigo);
+}
+
+
+::-webkit-scrollbar-thumb {								/* Barre */
+	border: solid 0 transparent;
+	border-right-width: 4px;
+	border-radius: 5px;
+	border-top-right-radius: 9px 5px;
+	border-bottom-right-radius: 9px 5px;
+	box-shadow: inset 0 0 0 1px black, inset 0 0 0 6px black;
+}
+::-webkit-scrollbar-thumb:hover {						/* Barre */
+	box-shadow: inset 0 0 0 1px white, inset 0 0 0 6px white;
+}
+
 body{
     font-family: "Rubik", sans-serif;
     margin: 0;
     overflow-y: scroll;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y;
 }
 
 body.active{
@@ -146,6 +165,7 @@ nav li a{
     font-weight: bold;
     font-size: 5rem;
     padding: 1rem;
+    user-select: none;
 }
 
 nav li a:hover{
@@ -160,7 +180,6 @@ nav li a:hover{
     justify-content: center;
     align-items: center;
     position: relative;
-    scroll-snap-align: start;
 }
 
 header, section{
@@ -177,6 +196,7 @@ header{
 
 .container section{
     height: 100%;
+    scroll-snap-align: start;
 }
 
 :-moz-any(header, section) p{
@@ -216,11 +236,13 @@ h1, h2{
     color: white;
     font-size: 4rem;
     text-transform: uppercase;
+    user-select: none;
 }
 
 header{
     background-color: red;
 }
+
 
 .s1{
     background-color: orange;
