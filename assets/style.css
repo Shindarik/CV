@@ -7,14 +7,14 @@ html{
     scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar {  
+/* ::-webkit-scrollbar {  
     width: 15px;
     border-radius: 4px;
     background: linear-gradient(to bottom, red,orange,yellow,green,blue, indigo);
 }
 
 
-::-webkit-scrollbar-thumb {								/* Barre */
+::-webkit-scrollbar-thumb {
 	border: solid 0 transparent;
 	border-right-width: 4px;
 	border-radius: 5px;
@@ -22,14 +22,14 @@ html{
 	border-bottom-right-radius: 9px 5px;
 	box-shadow: inset 0 0 0 1px black, inset 0 0 0 6px black;
 }
-::-webkit-scrollbar-thumb:hover {						/* Barre */
+::-webkit-scrollbar-thumb:hover {
 	box-shadow: inset 0 0 0 1px white, inset 0 0 0 6px white;
-}
+} */
 
 body{
     font-family: "Rubik", sans-serif;
     margin: 0;
-    overflow-y: scroll;
+    cursor: url("../images/cursor.png"), pointer;         
 }
 
 body.active{
@@ -251,6 +251,45 @@ header{
 }
 
 
+header h1{
+    font-size: 6rem;
+}
+        
+header a svg{
+   fill: white;
+   transform: scale(3);
+   position: absolute;
+   bottom: 50px;
+   animation: bounce 1.5s ease-in-out infinite;
+   cursor: pointer;
+}
+
+header .blob{
+   position: absolute;
+   z-index: -1;
+   width: 800px;
+   right: 300px;
+   border: solid green;
+}
+
+header .textMouse{
+    position: absolute;
+    color: #fff;
+    font-size: 1.5rem;
+    user-select: none;
+    pointer-events: none;
+    animation: rotateInfinite 7.5s linear infinite;
+}
+
+header .textMouse span{
+    position: absolute;
+    top: -100px;
+    display: inline-block;
+    text-transform: uppercase;
+    transform-origin: 0 100px;
+}        
+
+
 #s1{
     background-color: orange;
 }
@@ -285,5 +324,14 @@ footer{
     }
     100%{
         bottom: 50px; 
+    }
+}
+
+@keyframes rotateInfinite{
+    0%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(0deg); 
     }
 }
