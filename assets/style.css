@@ -322,8 +322,8 @@ header .textMouse span{
 }
 
 .moiPrincipal img{
+    clip-path: url(#blob);
     border: solid green;
-    mask-image: url(/images/cursor.png);
     position: absolute;
     top: 50%;
     left: 0;
