@@ -17,7 +17,7 @@ for(var i = 0; i < textSplice.length; i++){
 }
 
 
-window.addEventListener("scroll", function(){
+window.addEventListener("scroll", function(e){
     header.style.transform = `translateY(${window.scrollY * 0.5}px)`;
 });
 
