@@ -183,6 +183,7 @@ nav li a:hover{
     justify-content: center;
     align-items: center;
     position: relative;
+    overflow: hidden;
 }
 
 header, section{
@@ -191,6 +192,7 @@ header, section{
     justify-content: center;
     align-items: center;
     position: relative;
+    overflow: hidden;
 }
 
 header{
@@ -262,14 +264,6 @@ header a svg{
    bottom: 50px;
    animation: bounce 1.5s ease-in-out infinite;
    cursor: pointer;
-}
-
-header .blob{
-   position: absolute;
-   z-index: -1;
-   width: 800px;
-   right: 300px;
-   border: solid green;
 }
 
 header .textMouse{
