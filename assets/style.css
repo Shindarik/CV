@@ -197,6 +197,55 @@ header{
     height: 100vh;
 }
 
+.cross1{
+    position: absolute;
+    width: 15vw;
+    height: 15vw;
+    border: dashed #111 20px;
+    transform-origin: center;
+    border-radius: 1px;
+    top: 5%;
+    left: 10%;
+    color: white;
+    transition: all .5s ease;
+    animation: rotateInfinite 15s ease infinite;
+}
+
+.cross2{
+    position: absolute;
+    width: 15%;
+    height: 3%;
+    background-color: #111;
+    border-radius: 50px;
+    transform: rotateZ(-50deg);
+    bottom: 25%;
+    right: 10%;
+    transition: all .5s ease;
+    animation: disapear 10s cubic-bezier(.73,-0.05,.29,1.08) infinite;
+}
+
+.dis1{
+    width: 10%;
+    bottom: 20%;
+    right: 10%;
+    animation: disapear 9s cubic-bezier(.73,-0.05,.29,1.08) infinite;
+
+}
+
+.dis2{
+    width: 5%;
+    bottom: 15%;
+    right: 10%;
+    animation: disapear 8s cubic-bezier(.73,-0.05,.29,1.08) infinite;
+
+}
+
+.cross1:hover{
+    border-color: white;
+    border-style: double;
+}
+
+
 .container section{
     flex-direction: column;
     height: 100%;
@@ -385,4 +434,16 @@ footer{
 		background-position: 0% 50%;
 	}
     
+}
+
+@keyframes disapear{
+    0%{
+        transform: scale(0, 0) rotateZ(-50deg);
+    }
+    50%{
+        transform: scale(1, 1) rotateZ(-50deg);
+    }
+    100%{
+        transform: scale(0, 0) rotateZ(-50deg);
+    }
 }
