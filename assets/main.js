@@ -4,6 +4,8 @@ const nav = document.querySelector("nav");
 const body = document.querySelector("body");
 const header = document.querySelector("header");
 const textMouse = document.querySelector(".textMouse");
+const section1 = document.querySelector("#s1");
+const moiPrincipal = document.querySelector(".moiPrincipal");
 
 //code
 textMouse.innerHTML = textMouse.textContent.replace(/\S/g, "<span>$&</span>");
@@ -16,9 +18,21 @@ for(var i = 0; i < textSplice.length; i++){
 
 }
 
+function ElementVue(e) {
+    const rect = e.getBoundingClientRect();
+    return (
+        rect.top <= (window.innerHeight/2) &&
+        rect.bottom <= (window.innerHeight/2)
+    );
+}
 
 window.addEventListener("scroll", function(e){
     header.style.transform = `translateY(${window.scrollY * 0.5}px)`;
+    if(ElementVue(section1) == true){
+        moiPrincipal.style.opacity = 1;
+    }else{
+        moiPrincipal.style.opacity = 0;
+    }
 });
 
 burger.addEventListener("click", function(){

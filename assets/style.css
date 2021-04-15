@@ -12,7 +12,6 @@ html{
     background: #111;
 }
 
-
 ::-webkit-scrollbar-thumb {
 	background-color: #fff;
     border-radius: 50px;
@@ -208,7 +207,7 @@ header{
     left: 10%;
     color: white;
     transition: all .5s ease;
-    animation: rotateInfinite 15s ease infinite;
+    animation: rotateInfinite 15s ease infinite alternate-reverse;
 }
 
 .cross2{
@@ -355,31 +354,158 @@ header .textMouse span{
 
 .moiPrincipal{
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 500px;
-    height: 500px;
-    border: solid red;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10%;
+    width: 700px;
+    height: 700px;
+    z-index: 3;
+    transition: all 1s ease;
 }
 
 .moiPrincipal svg{
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
-    width: 500px;
+    z-index: 3;
+    width: 700px;
 }
 
 .moiPrincipal img{
-    clip-path: url(#blob);
-    border: solid green;
+    -webkit-mask-image: linear-gradient(black 70%, transparent 100%);
+    mask-image: linear-gradient(black 25%, transparent 50%);
     position: absolute;
     top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    z-index: 2;
-    width: 500px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    width: 600px;
 }
+
+.moiSecondaire{
+    position: absolute;
+    top: 100vh;
+    right: 45%;
+    width: 350px;
+    height: 350px;
+    z-index: 1;
+    filter: blur(1px);
+    animation: bulleUp 10s ease infinite, bulleMove 20s cubic-bezier(.57,-0.86,.37,1.84) infinite;
+}
+
+.moiSecondaire svg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: rotateZ(145deg) scaleX(.8);
+    width: 350px;
+}
+
+.moiSecondaire img{
+    -webkit-mask-image: linear-gradient(black 70%, transparent 100%);
+    mask-image: linear-gradient(black 25%, transparent 50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -50%);
+    z-index: 2;
+    width: 300px;
+}
+
+.moiTertiaire{
+    position: absolute;
+    top: 100vh;
+    right: 5%;
+    width: 250px;
+    height: 250px;
+    z-index: 1;
+    filter: blur(1px);
+    animation: bulleUp 10s ease infinite, bulleMove2 20s cubic-bezier(.57,-0.86,.37,1.84) infinite;
+}
+
+.moiTertiaire svg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: rotateZ(245deg) scaleX(.8);
+    width: 250px;
+}
+
+.moiTertiaire img{
+    -webkit-mask-image: linear-gradient(black 70%, transparent 100%);
+    mask-image: linear-gradient(black 25%, transparent 50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-65%, -50%);
+    z-index: 2;
+    width: 200px;
+}
+
+.moiTertiaire2{
+    position: absolute;
+    top: 100vh;
+    right: 5%;
+    width: 250px;
+    height: 250px;
+    z-index: 1;
+    filter: blur(1px);
+    animation: bulleUp 8s ease infinite, bulleMove2 10s cubic-bezier(.57,-0.86,.37,1.84) infinite;
+}
+
+.moiTertiaire2 svg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: rotateZ(245deg) scaleX(.8);
+    width: 250px;
+}
+
+.moiTertiaire2 img{
+    -webkit-mask-image: linear-gradient(black 70%, transparent 100%);
+    mask-image: linear-gradient(black 25%, transparent 50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -50%) scaleX(-1);
+    z-index: 2;
+    width: 200px;
+}
+
+.moiSecondaire2{
+    position: absolute;
+    top: 100vh;
+    right: 45%;
+    width: 350px;
+    height: 350px;
+    z-index: 1;
+    filter: blur(1px);
+    animation: bulleUp 5s ease infinite, bulleMove 20s cubic-bezier(.57,-0.86,.37,1.84) infinite;
+}
+
+.moiSecondaire2 svg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: rotateZ(145deg) scaleX(.8);
+    width: 350px;
+}
+
+.moiSecondaire2 img{
+    -webkit-mask-image: linear-gradient(black 70%, transparent 100%);
+    mask-image: linear-gradient(black 25%, transparent 50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-65%, -50%) scaleX(-1);
+    z-index: 2;
+    width: 300px;
+}
+
 
 #s2{
     background-color: yellow;
@@ -445,5 +571,47 @@ footer{
     }
     100%{
         transform: scale(0, 0) rotateZ(-50deg);
+    }
+}
+
+@keyframes bulleUp{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-150vh); 
+    }
+}
+
+@keyframes bulleMove{
+    0%{
+        right: 20%;
+    }
+    20%{
+        right: 10%;
+    }
+    40%{
+        right:  35%;
+    }
+    60%{
+        right: 20%;
+    }
+    80%{
+        right:  35%;
+    }
+    100%{
+        right: 20%;
+    }
+}
+
+@keyframes bulleMove2{
+    0%{
+        right: 0%;
+    }
+    20%{
+        right: 40%;
+    }
+    100%{
+        right: 0%;
     }
 }
