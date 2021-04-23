@@ -7,6 +7,7 @@ const textMouse = document.querySelector(".textMouse");
 const section1 = document.querySelector("#s1");
 const moiPrincipal = document.querySelector(".moiPrincipal");
 const linkNav = document.querySelectorAll(".link a");
+const comp = document.querySelectorAll(".comp");
 
 //code
 textMouse.innerHTML = textMouse.textContent.replace(/\S/g, "<span>$&</span>");
@@ -60,6 +61,12 @@ linkNav.forEach(e => {
         nav.classList.toggle("active");
         body.classList.toggle("active");
         
+    });  
+});
+
+comp.forEach(e => {
+    e.addEventListener("click", function(){  
+        this.classList.toggle("active");
     });  
 });
 
