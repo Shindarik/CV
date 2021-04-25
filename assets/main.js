@@ -8,6 +8,8 @@ const section1 = document.querySelector("#s1");
 const moiPrincipal = document.querySelector(".moiPrincipal");
 const linkNav = document.querySelectorAll(".link a");
 const comp = document.querySelectorAll(".comp");
+const parcour = document.querySelectorAll(".parcour");
+const section3 = document.querySelector("#s3");
 
 //code
 textMouse.innerHTML = textMouse.textContent.replace(/\S/g, "<span>$&</span>");
@@ -67,6 +69,15 @@ linkNav.forEach(e => {
 comp.forEach(e => {
     e.addEventListener("click", function(){  
         this.classList.toggle("active");
+    });  
+});
+
+parcour.forEach(e => {
+    e.addEventListener("mouseenter", function(){ 
+        section3.style.boxShadow = "inset "+e.getAttribute("data-background")+" 0px lightskyblue";
+    });  
+    e.addEventListener("mouseleave", function(){
+        section3.style.boxShadow = "inset 50vw 0px lightskyblue";
     });  
 });
 
