@@ -9,15 +9,16 @@ const moiPrincipal = document.querySelector(".moiPrincipal");
 const linkNav = document.querySelectorAll(".link a");
 const comp = document.querySelectorAll(".comp");
 const parcour = document.querySelectorAll(".parcour");
-const section3 = document.querySelector("#s3");
+const bgSplit1 = document.querySelector(".bgSplit1");
+const bgSplit2 = document.querySelector(".bgSplit2");
+const Split2 = document.querySelectorAll(".op.split2");
+const Split1 = document.querySelectorAll(".op.split1");
 
 //code
 textMouse.innerHTML = textMouse.textContent.replace(/\S/g, "<span>$&</span>");
 const textSplice = document.querySelectorAll(".textMouse span");
 
 for(var i = 0; i < textSplice.length; i++){
-
-    console.log("test");
     textSplice[i].style.transform = "rotate("+ i * 13 +"deg)";
 
 }
@@ -72,12 +73,28 @@ comp.forEach(e => {
     });  
 });
 
+
 parcour.forEach(e => {
     e.addEventListener("mouseenter", function(){ 
-        section3.style.boxShadow = "inset "+e.getAttribute("data-background")+" 0px lightskyblue";
+        if (e.getAttribute("data-split") == 1) {
+            bgSplit2.style.width = "100%";
+            bgSplit1.style.width = "0%";
+            Split1.forEach(element => {
+                element.style.clipPath = "none";
+            });
+
+        }else if(e.getAttribute("data-split") == 2){
+            bgSplit1.style.width = "100%";
+            bgSplit2.style.width = "0%";
+            Split2.forEach(element => {
+                element.style.clipPath = "none";
+            });
+        }
+        
     });  
     e.addEventListener("mouseleave", function(){
-        section3.style.boxShadow = "inset 50vw 0px lightskyblue";
+        bgSplit1.style.width = "50%";
+        bgSplit2.style.width = "50%";
     });  
 });
 
