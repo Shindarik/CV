@@ -760,6 +760,28 @@ header .textMouse span{
 
 #s4{
     background-color: #EA526F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    border: solid;
+    width: 60%;
+    height: 70%;
+    margin-top: 5%;
+    padding: 1rem;
+    display: flex;  
+    flex-direction: column;
+    justify-content: center;
+}
+
+#mail{
+    width: 50%;
+}
+
+#nom{
+    width: 50%;
 }
 
 footer{
