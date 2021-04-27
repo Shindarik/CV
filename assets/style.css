@@ -286,12 +286,13 @@ h1{
 }
 
 section h1{
+    margin: 0;
     font-size: 2.5rem;
     position: absolute;
     z-index: 2;
-    top: 0;
-    left: 0;
-    padding: 1.5rem;
+    top: 3.5vh;
+    left: 2.5vw;
+    padding: 1.25rem;
 }
 
 section h1::before, section h1::after{
@@ -373,7 +374,9 @@ header .textMouse span{
 }
 
 .description{
-    font-size: 1.5rem;
+    position: relative;
+    z-index: 2;
+    font-size: 1.25rem;
     width: 30%;
     height: auto;
     min-width: 400px;
@@ -401,9 +404,9 @@ header .textMouse span{
     position: absolute;
     top: 50%;
     transform: translateY(-100%);
-    right: 10%;
-    width: 700px;
-    height: 700px;
+    right: 5%;
+    width: 45vw;
+    height: 45vw;
     z-index: 3;
     transition: all 1s ease;
 }
@@ -413,9 +416,19 @@ header .textMouse span{
     top: 0;
     left: 0;
     z-index: 3;
-    width: 700px;
-    -webkit-animation: rotateInfinite 30s linear infinite;
-            animation: rotateInfinite 30s linear infinite;
+    width: 55vw;
+    transform: translate(-10%, -10%);
+    -webkit-animation: rotateInfiniteSvg 30s linear infinite;
+            animation: rotateInfiniteSvg 30s linear infinite;
+}
+
+@keyframes rotateInfiniteSvg{
+    0%{
+        transform: translate(-10%, -10%) rotate(360deg);
+    }
+    100%{
+        transform: translate(-10%, -10%) rotate(0deg); 
+    }
 }
 
 .moiPrincipal img{
@@ -426,7 +439,7 @@ header .textMouse span{
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 4;
-    width: 600px;
+    width: 100%;
 }
 
 .moiSecondaire{
@@ -577,11 +590,13 @@ header .textMouse span{
     margin-top: 100px;
     height: auto;
     width: 45%;
+    max-height: 75%;
+    overflow: auto;
 }
 
 .comp.active .bar{
-    width: 500px;
-    height: 50px;
+    width: 50%;
+    height: 7vh;
     border-radius: 5px;
     overflow: hidden;
     background-color: white;
@@ -598,7 +613,7 @@ header .textMouse span{
 
 .comp.active .element{
     width: 100%;
-    padding: 1rem;
+    padding: .5rem;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -611,7 +626,7 @@ header .textMouse span{
 }
 
 .comp.active .element img{
-    width: 75px;
+    width: 10%;
 }
 
 @-webkit-keyframes progress{
@@ -688,7 +703,6 @@ header .textMouse span{
 .op{
     position: relative;
     z-index: 2;
-    border: solid red;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -733,6 +747,10 @@ header .textMouse span{
     display: block;
     font-weight: bold;
     color: #e02648;
+}
+
+.parcour b{
+    color: #098058;
 }
 
 .parcour:hover{

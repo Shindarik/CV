@@ -80,14 +80,14 @@ parcour.forEach(e => {
             bgSplit2.style.width = "100%";
             bgSplit1.style.width = "0%";
             Split1.forEach(element => {
-                element.style.clipPath = "none";
+                element.style.clipPath = "polygon(0 0, 100% 0, 100% 100%, 0% 100%)";
             });
 
         }else if(e.getAttribute("data-split") == 2){
             bgSplit1.style.width = "100%";
             bgSplit2.style.width = "0%";
             Split2.forEach(element => {
-                element.style.clipPath = "none";
+                element.style.clipPath = "polygon(0 0, 100% 0, 100% 100%, 0% 100%)";
             });
         }
         
@@ -95,6 +95,12 @@ parcour.forEach(e => {
     e.addEventListener("mouseleave", function(){
         bgSplit1.style.width = "50%";
         bgSplit2.style.width = "50%";
+        Split1.forEach(element => {
+            element.style.clipPath = "polygon(50% 0, 100% 0, 100% 100%, 50% 100%)";
+        });
+        Split2.forEach(element => {
+            element.style.clipPath = "polygon(0 0, 50% 0, 50% 100%, 0 100%)";
+        });
     });  
 });
 
