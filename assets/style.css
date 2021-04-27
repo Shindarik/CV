@@ -422,6 +422,15 @@ header .textMouse span{
             animation: rotateInfiniteSvg 30s linear infinite;
 }
 
+@-webkit-keyframes rotateInfiniteSvg{
+    0%{
+        transform: translate(-10%, -10%) rotate(360deg);
+    }
+    100%{
+        transform: translate(-10%, -10%) rotate(0deg); 
+    }
+}
+
 @keyframes rotateInfiniteSvg{
     0%{
         transform: translate(-10%, -10%) rotate(360deg);
@@ -712,12 +721,14 @@ header .textMouse span{
 }
 
 .op.split2{
-    clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+            clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
     transition: all 0.5s ease;
 }
 
 .op.split1{
-    clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+    -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+            clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
     transition: all 0.5s ease;
 
 }
@@ -763,6 +774,10 @@ header .textMouse span{
     display: flex;
     justify-content: center;
     align-items: center;
+    /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+	background-size: 400% 400%;
+	-webkit-animation: gradient 15s ease infinite;
+	        animation: gradient 15s ease infinite;
 }
 
 form{
