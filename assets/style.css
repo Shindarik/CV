@@ -771,40 +771,39 @@ header .textMouse span{
 }
 
 #s4{
-    background-color: #EA526F;
+    background-color: #570a96;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
-    background-image: linear-gradient( 135deg, #FAB2FF 10%, #1904E5 100%);	background-size: 400% 400%;
-	-webkit-animation: gradient 15s ease infinite;
-	        animation: gradient 15s ease infinite;
 }
 
 form{
     border: solid;
     width: 60%;
-    height: 70%;
-    margin-top: 5%;
+    height: auto;
+    margin-top: 7%;
     padding: 1rem;
+    border: none;
     display: flex;  
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .check{
     position: relative;
     width: 50%;
     height: 5%;
-    margin: 1rem 0;
+    margin: 1.25rem 0;
 }
 
 .check input{
+    color: white;
     width: 100%;
     height: 100%;
+    padding: 0.75rem 0rem;
     background: none;
     border: none;
-    border-bottom: solid white;
+    border-bottom: solid white 4px;
     transition: all 0.25s ease;
 }
 
@@ -820,13 +819,63 @@ form{
 .check input:focus + label, .check input:not(:placeholder-shown) + label{
     transform: translateY(-110%);
     font-weight: bold;
+    color: rgb(2, 220, 235);
 }
 
 .check input:focus, .check input:not(:placeholder-shown){
-    border-bottom: solid rgb(43, 230, 220);
+    border-bottom: solid rgb(2, 220, 235) 4px;
     outline: none;
 }
 
+.texte{
+    margin: 1rem 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.texte textarea{
+    border: solid 4px black;
+    margin: .5rem 0rem;
+    padding: .5rem;
+    resize: none;
+    transition: all .25s ease;
+}
+
+.texte label{
+    transition: all .25s ease;
+}
+
+.texte textarea:focus, .texte textarea:not(:placeholder-shown){
+    outline: none;
+    border: solid 4px rgb(2, 220, 235);
+}
+
+.texte textarea:focus + label, .texte textarea:not(:placeholder-shown) + label{
+    font-weight: bold;
+    color: rgb(2, 220, 235);
+}
+
+#submit{
+    width: 30%;
+    height: 10%;
+    border: solid 5px rgba(0, 0, 0);
+    box-shadow: 0px 5px black;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin: .5rem auto;
+    cursor: pointer;
+    transition: all .25s ease;
+}
+
+#submit:hover{
+    box-shadow: 0px 0px black;
+    transform: translateY(5px);
+    border: solid 5px rgba(0, 0, 0, 0.8);
+    background-color: #1b042e;
+    color: white;
+}
 
 footer{
     height: 15vh;
