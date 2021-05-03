@@ -788,7 +788,9 @@ form{
     background-color: rgba(0, 0, 0, 0.4);
     border: solid rgb(156, 82, 224) 5px;
     border-radius: 50px;
+    transition: all .5s ease;
 }
+
 
 .check{
     position: relative;
@@ -878,20 +880,6 @@ form{
     background-color: #1b042e;
     color: white;
 }
-
-
-.wave{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 15%;
-    z-index: 1;
-    background: url(/images/wave.svg);
-    background-size: cover;
-    background-position: center;
-}
-
 
 footer{
     height: 15vh;
