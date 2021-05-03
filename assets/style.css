@@ -794,9 +794,26 @@ header .textMouse span{
     color: #098058;
 }
 
+.parcour i{
+    text-align: center;
+    display: block;
+    margin: 1rem;
+    color: #098058;
+}
+
 .parcour:hover{
     transform: translate(20px, 20px);
     box-shadow: none;
+}
+
+.op img{
+    border-radius: 43% 57% 62% 38% / 69% 54% 46% 31%;
+    animation: morph calc(var(--i) * 5s) ease infinite;
+}
+
+#logoHelpMMI{
+    border-radius: 0%;
+    animation: none;
 }
 
 #s4{
@@ -809,7 +826,7 @@ header .textMouse span{
 
 form{
     position: relative;
-    z-index: 2;
+    z-index: 3;
     width: 60%;
     height: auto;
     padding: 2rem 3rem;
@@ -817,7 +834,7 @@ form{
     flex-direction: column;
     justify-content: space-around;
     background-color: rgb(48, 15, 80);
-    border: solid rgb(156, 82, 224) 5px;
+    border: dashed rgb(156, 82, 224) 5px;
     border-radius: 50px;
     transition: all .5s ease;
 }
@@ -918,7 +935,7 @@ form{
 
 .shape1{
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     top: 5%;
     right: 15%;
     width: 25vh;
@@ -939,7 +956,7 @@ form{
     left: 10%;
     width: 50vh;
     height: 50vh;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.7);
     border-radius: 43% 57% 62% 38% / 69% 54% 46% 31%;
     animation: morph 15s ease infinite;
 }
