@@ -6,6 +6,9 @@ const header = document.querySelector("header");
 const textMouse = document.querySelector(".textMouse");
 const section1 = document.querySelector("#s1");
 const moiPrincipal = document.querySelector(".moiPrincipal");
+const moiPrincipalImg = document.querySelector(".moiPrincipal img");
+const description = document.querySelector(".description");
+const bulleCV = document.querySelector(".cvText");
 const linkNav = document.querySelectorAll(".link a");
 const comp = document.querySelectorAll(".comp");
 const parcour = document.querySelectorAll(".parcour");
@@ -65,6 +68,18 @@ linkNav.forEach(e => {
         body.classList.toggle("active");
         
     });  
+});
+
+description.addEventListener("mouseenter", function(){
+    bulleCV.style.opacity = "1";
+    moiPrincipalImg.src = "/images/moiTertiaire.png";
+    moiPrincipalImg.style.transform = "translate(-65%, -50%)";
+});
+
+description.addEventListener("mouseleave", function(){
+    bulleCV.style.opacity = "0";
+    moiPrincipalImg.src = "/images/moiPrincipal.png";
+    moiPrincipalImg.style.transform = "translate(-50%, -50%)";
 });
 
 comp.forEach(e => {

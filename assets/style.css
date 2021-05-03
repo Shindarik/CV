@@ -451,6 +451,7 @@ header .textMouse span{
     width: 100%;
 }
 
+
 .moiSecondaire{
     position: absolute;
     top: 100vh;
@@ -535,6 +536,34 @@ header .textMouse span{
 
 .double img{
     transform: translate(-65%, -50%) scaleX(-1);
+}
+
+.cvText{
+    position: absolute;
+    top: 34%;
+    right: 19%;
+    width: 70%;
+    height: 8vw;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(3px);
+    padding: 0rem 1rem;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(40% 20%, 100% 20%, 100% 80%, 0 80%, 0 20%, 25% 20%, 50% 0);
+    opacity: 0;
+    transition: all .5s ease;
+}
+
+.cvText p{
+    font-size: 1vw;
+    color: white;
+}
+
+.cvText p span{
+    font-weight: 700;
+    color: rgb(32, 178, 122);
 }
 
 
@@ -779,13 +808,15 @@ header .textMouse span{
 }
 
 form{
+    position: relative;
+    z-index: 2;
     width: 60%;
     height: auto;
     padding: 2rem 3rem;
     display: flex;  
     flex-direction: column;
     justify-content: space-around;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgb(48, 15, 80);
     border: solid rgb(156, 82, 224) 5px;
     border-radius: 50px;
     transition: all .5s ease;
@@ -880,6 +911,58 @@ form{
     background-color: #1b042e;
     color: white;
 }
+
+#submit:focus{
+    background-color: rgb(2, 220, 235);
+}
+
+.shape1{
+    position: absolute;
+    z-index: 2;
+    top: 5%;
+    right: 15%;
+    width: 25vh;
+    height: 25vh;
+    background-color: #8f1feb;
+    border-radius: 43% 57% 62% 38% / 69% 54% 46% 31%;
+    animation: morph 10s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.shape2{
+    position: absolute;
+    z-index: 1;
+    bottom: 5%;
+    left: 10%;
+    width: 50vh;
+    height: 50vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 43% 57% 62% 38% / 69% 54% 46% 31%;
+    animation: morph 15s ease infinite;
+}
+
+
+@keyframes morph {
+    from {
+        border-radius: 43% 57% 62% 38% / 69% 54% 46% 31%;
+    }
+
+    25% {
+        border-radius: 25% 75% 46% 54% / 42% 46% 54% 58%;
+    }
+
+    50% {
+        border-radius: 39% 61% 32% 68% / 59% 34% 66% 41%;
+    }
+
+    to {
+        border-radius: 43% 57% 62% 38% / 69% 54% 46% 31%;
+    }
+}
+
 
 footer{
     height: 15vh;
