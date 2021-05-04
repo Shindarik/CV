@@ -828,6 +828,7 @@ form{
     position: relative;
     z-index: 3;
     width: 60%;
+    max-height: 70%;
     height: auto;
     padding: 2rem 3rem;
     display: flex;  
