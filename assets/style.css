@@ -221,6 +221,9 @@ header{
 }
 
 .cross1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     width: 15vw;
     height: 15vw;
@@ -232,6 +235,15 @@ header{
     color: white;
     transition: all .5s ease;
     animation: rotateInfinite 15s ease infinite alternate-reverse;
+}
+
+.cross1 svg{
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.cross1:hover svg{
+    opacity: 1;
 }
 
 .cross2{
@@ -582,7 +594,7 @@ header .textMouse span{
 
 .comp{
     position: relative;
-    z-index: 2;
+    z-index: 5;
     width: 30%;
     height: 30%;
     background-color: #fff;
@@ -674,15 +686,65 @@ header .textMouse span{
 .comp.active .element img{
     width: 10%;
 }
-/* 
-@-webkit-keyframes wave{
+
+.wave1{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    animation: waveX 5s linear infinite, waveY 10s ease infinite;
+    z-index: 2;
+}
+
+.wave2{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    width: 200%;
+    transform: scaleX(-1);
+    animation: waveX2 10s linear infinite, waveY 10s ease infinite;
+    z-index: 1;
+}
+
+.wave3{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    width: 200%;
+    animation: waveX 20s linear infinite, waveY 15s ease infinite;
+    z-index: 1;
+}
+
+
+@keyframes waveY{
+    0%, 100%{
+        bottom: 0%;
+    }
+    50%{
+        bottom: -10%;
+    }
+}
+
+@keyframes waveX{
     0%{
         transform: translateX(0%);
     }
     100%{
-        transform: translateX(50%);
+        transform: translateX(-50%);
     }
-} */
+}
+
+@keyframes waveX2{
+    0%{
+        transform: translateX(0%) scaleX(-1);
+    }
+    100%{
+        transform: translateX(-50%) scaleX(-1);
+    }
+}
 
 @-webkit-keyframes progress{
     0%{
@@ -997,14 +1059,31 @@ form{
     }
 }
 
-
 footer{
     height: 15vh;
     width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     background-color: #111;
+}
+
+.logoCV{
+    padding: 1rem;
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cvPDF{
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @-webkit-keyframes bounce{
