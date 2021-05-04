@@ -72,13 +72,13 @@ linkNav.forEach(e => {
 
 description.addEventListener("mouseenter", function(){
     bulleCV.style.opacity = "1";
-    moiPrincipalImg.src = "/images/moiTertiaire.png";
+    moiPrincipalImg.src = "./images/moiTertiaire.png";
     moiPrincipalImg.style.transform = "translate(-65%, -50%)";
 });
 
 description.addEventListener("mouseleave", function(){
     bulleCV.style.opacity = "0";
-    moiPrincipalImg.src = "/images/moiPrincipal.png";
+    moiPrincipalImg.src = "./images/moiPrincipal.png";
     moiPrincipalImg.style.transform = "translate(-50%, -50%)";
 });
 
