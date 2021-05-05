@@ -11,22 +11,6 @@
     <title>CV - Suslu Matéo</title>
 </head>
 <body>
-
-    <?php
-        $link = new PDO('mysql:host=localhost;dbname=cv', 'root', '', array
-        (PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
-        // pour le serveur de l'UPEM, remplacer localhost par sqletud.u-pem.fr
-
-        // On vérifie que l'adresse de courriel a bien été transmise en GET
-        if(isset($_GET["email"]) && isset($_GET["nom"]) && isset($_GET["message"])){
-            $sql = "INSERT INTO contact(email, nom, texte) VALUES (:email, :nom, :message)";
-            // On prépare la requête avant l'envoi :
-            $req = $link -> prepare($sql);
-            // On exécute la requête en insérant la valeur transmise en GET
-            $req -> execute(array(":email" => $_GET["email"],":nom" => $_GET["nom"], ":message" => $_GET["message"]));
-            $req = null;
-        }
-    ?>
     
     <nav>
         <div class="panel">
@@ -278,7 +262,7 @@
     <div class="container">
         <section id="s4">
             <h1>Contact</h1>
-            <form action="" method="post">
+            <form method="post">
                 <div class="check">
                     <input type="email" name="mail" id="mail" required placeholder=" ">
                     <label for="mail">Email</label>
@@ -298,6 +282,14 @@
                 <img src="./images/enveloppe.svg" alt="" width="40%">
             </div>
             <div class="shape2"></div>
+
+            <?php
+                if (isset($_POST['mail']) && isset($_POST['nom']) && isset($_POST['message'])) {
+
+                    $retour = mail('mateosuslu.pro@gmail.com', $_POST['nom'], $_POST['message'], 'From: ' . $_POST['mail']);
+                }
+            ?>
+
         </section>
     </div>
     <footer>
