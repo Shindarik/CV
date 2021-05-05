@@ -11,6 +11,22 @@
     <title>CV - Suslu Matéo</title>
 </head>
 <body>
+
+    <?php
+        $link = new PDO('mysql:host=localhost;dbname=cv', 'root', '', array
+        (PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+        // pour le serveur de l'UPEM, remplacer localhost par sqletud.u-pem.fr
+
+        // On vérifie que l'adresse de courriel a bien été transmise en GET
+        if(isset($_GET["email"]) && isset($_GET["nom"]) && isset($_GET["message"])){
+            $sql = "INSERT INTO contact(email, nom, texte) VALUES (:email, :nom, :message)";
+            // On prépare la requête avant l'envoi :
+            $req = $link -> prepare($sql);
+            // On exécute la requête en insérant la valeur transmise en GET
+            $req -> execute(array(":email" => $_GET["email"],":nom" => $_GET["nom"], ":message" => $_GET["message"]));
+            $req = null;
+        }
+    ?>
     
     <nav>
         <div class="panel">

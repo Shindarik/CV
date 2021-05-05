@@ -31,6 +31,7 @@ body::-webkit-scrollbar-thumb {
 	background-color: #fff;
     border-radius: 50px;
 }
+
 body::-webkit-scrollbar-thumb:hover {
 	background-color: rgb(89, 211, 252);
 }
@@ -349,6 +350,8 @@ header{
 
 header h1{
     font-size: 6rem;
+    margin-left: 0;
+    text-align: center;
 }
         
 header a svg{
@@ -380,13 +383,12 @@ header .textMouse span{
     display: inline-block;
     text-transform: uppercase;
     transform-origin: 0 100px;
-}        
-
+}
 
 #s1{
     background-color: rgb(4, 60, 92);
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .description{
@@ -395,12 +397,12 @@ header .textMouse span{
     font-size: 1.25rem;
     width: 30%;
     height: auto;
-    min-width: 400px;
+    min-width: 300px;
     max-height: 350px;
     text-align: justify;
     background-color: #fff;
     padding: 1.25rem;
-    margin: 50px 50px;
+    margin: 125px 50px 50px;
     box-shadow: 20px 20px rgba(0, 0, 0, 0.3);
     transition: all 0.25s ease;
     overflow: auto;
@@ -580,6 +582,67 @@ header .textMouse span{
 .cvText p span{
     font-weight: 700;
     color: rgb(32, 178, 122);
+}
+
+.hobbies{
+    position: relative;
+    z-index: 2;
+    width: 40%;
+    min-height: 20%;
+    margin: 0px 50px 50px;
+    color: white;
+    overflow: auto;
+}
+
+.hobbies::-webkit-scrollbar {  
+    width: 5px;
+    background: #111;
+}
+
+.hobbies::-webkit-scrollbar-thumb {
+	background-color: #fff;
+    border-radius: 50px;
+}
+
+.iconeHobbie{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.hobbie{
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hobbie img{
+    width: 30%;
+    transition: all .75s ease;
+}
+
+.hobbie img:hover{
+    transform: scale(1.4) rotate(360deg);
+}
+
+.hobbie span{
+    margin-top: 15px;
+    font-style: italic;
+}
+
+.hobbie p{
+    text-align: center;
+}
+
+.hobbie a{
+    text-decoration: none;
+    font-weight: bold;
+    color: springgreen;
 }
 
 
@@ -838,6 +901,7 @@ header .textMouse span{
     -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
             clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
     transition: all 0.5s ease;
+    flex-direction: row-reverse;
 
 }
 
@@ -1287,5 +1351,69 @@ footer a{
     }
     100%{
         right: 0%;
+    }
+}
+
+@media (max-width : 1100px) {
+    .op.split1, .op.split2, .parcour{
+        flex-direction: column;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    .parcour:hover{
+        transform: none;
+    }
+}
+
+@media (max-width : 830px) {
+
+    #s1{
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .description{
+        width: 80%;
+        height: 40%;
+    }
+
+    .hobbies{
+        width: 80%;
+        height: 40%;
+    }
+
+    .moiPrincipal{
+        display: none;
+    }
+
+    form{
+        height: 60%;
+    }
+}
+
+@media (max-width : 768px) {
+
+    .textMouse{
+        display: none;
+    }
+}
+
+@media (max-width : 690px) {
+
+    .comp.active .bar{
+        display: none;
+    }
+
+    .comp.active .element img{
+        width: 30%;
+    }
+
+    .comp h2{
+        font-size: 1.5rem;
+    }
+
+    #submit{
+        width: 70%;
     }
 }

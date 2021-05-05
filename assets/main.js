@@ -34,6 +34,28 @@ function ElementVue(e) {
     );
 }
 
+window.addEventListener("resize", function(){
+    if(window.matchMedia("(max-width: 1100px)").matches){
+        bgSplit1.style.width = "50%";
+        bgSplit2.style.width = "50%";
+        Split1.forEach(element => {
+            element.style.clipPath = "polygon(0 0, 100% 0, 100% 100%, 0 100%)";
+        });
+        Split2.forEach(element => {
+            element.style.clipPath = "polygon(0 0, 100% 0, 100% 100%, 0 100%)";
+        });
+    }else{
+        bgSplit1.style.width = "50%";
+        bgSplit2.style.width = "50%";
+        Split1.forEach(element => {
+            element.style.clipPath = "polygon(50% 0, 100% 0, 100% 100%, 50% 100%)";
+        });
+        Split2.forEach(element => {
+            element.style.clipPath = "polygon(0 0, 50% 0, 50% 100%, 0 100%)";
+        });
+    }
+});
+
 window.addEventListener("scroll", function(e){
     header.style.transform = `translateY(${window.scrollY * 0.5}px)`;
     if(ElementVue(section1) == true){
@@ -90,33 +112,36 @@ comp.forEach(e => {
 
 
 parcour.forEach(e => {
-    e.addEventListener("mouseenter", function(){ 
-        if (e.getAttribute("data-split") == 1) {
-            bgSplit2.style.width = "100%";
-            bgSplit1.style.width = "0%";
-            Split1.forEach(element => {
-                element.style.clipPath = "polygon(0 0, 100% 0, 100% 100%, 0% 100%)";
-            });
-
-        }else if(e.getAttribute("data-split") == 2){
-            bgSplit1.style.width = "100%";
-            bgSplit2.style.width = "0%";
-            Split2.forEach(element => {
-                element.style.clipPath = "polygon(0 0, 100% 0, 100% 100%, 0% 100%)";
-            });
-        }
+        e.addEventListener("mouseenter", function(){
+            if(!window.matchMedia("(max-width: 1100px)").matches){
+                
+                if (e.getAttribute("data-split") == 1) {
+                    bgSplit2.style.width = "100%";
+                    bgSplit1.style.width = "0%";
+                    Split1.forEach(element => {
+                        element.style.clipPath = "polygon(0 0, 100% 0, 100% 100%, 0% 100%)";
+                    });
         
-    });  
-    e.addEventListener("mouseleave", function(){
-        bgSplit1.style.width = "50%";
-        bgSplit2.style.width = "50%";
-        Split1.forEach(element => {
-            element.style.clipPath = "polygon(50% 0, 100% 0, 100% 100%, 50% 100%)";
-        });
-        Split2.forEach(element => {
-            element.style.clipPath = "polygon(0 0, 50% 0, 50% 100%, 0 100%)";
-        });
-    });  
+                }else if(e.getAttribute("data-split") == 2){
+                    bgSplit1.style.width = "100%";
+                    bgSplit2.style.width = "0%";
+                    Split2.forEach(element => {
+                        element.style.clipPath = "polygon(0 0, 100% 0, 100% 100%, 0% 100%)";
+                    });
+                }
+            } 
+            
+        });  
+        e.addEventListener("mouseleave", function(){
+            if(!window.matchMedia("(max-width: 1100px)").matches){
+                bgSplit1.style.width = "50%";
+                bgSplit2.style.width = "50%";
+                Split1.forEach(element => {
+                    element.style.clipPath = "polygon(50% 0, 100% 0, 100% 100%, 50% 100%)";
+                });
+                Split2.forEach(element => {
+                    element.style.clipPath = "polygon(0 0, 50% 0, 50% 100%, 0 100%)";
+                });
+            }
+        });  
 });
-
-
