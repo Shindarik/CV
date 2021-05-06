@@ -291,7 +291,7 @@
                         <span>2017/2020</span>
                         <p>J'ai effectué un BAC STI2D (Science de l'Industrie et du Développement Durable) au <b>lycée
                                 Martin Luther King</b>. J'ai pris l'option Science d'Information et Numérique (SIN) ce
-                            qui m'as permis d'approfondir ma passion pour l'informatique. J'ai donc eu un le BAC
+                            qui m'as permis d'approfondir ma passion pour l'informatique. J'ai donc eu le BAC
                             <b>mention très bien</b></p>
                     </div>
                     <img src="./images/mlk.jpg" alt="Lycée Martin Luther King" style="--i:2;">

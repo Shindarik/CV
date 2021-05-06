@@ -371,8 +371,9 @@ header h1 {
 
 header a svg {
     fill: white;
-    transform: scale(3);
+    transform:  translateX(-50%) scale(3);
     position: absolute;
+    left: 50%;
     bottom: 50px;
     -webkit-animation: bounce 1.5s ease-in-out infinite;
     animation: bounce 1.5s ease-in-out infinite;
