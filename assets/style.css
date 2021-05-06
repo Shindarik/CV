@@ -414,7 +414,7 @@ header .textMouse span {
     width: 30%;
     height: auto;
     min-width: 300px;
-    max-height: 350px;
+    max-height: 280px;
     text-align: justify;
     background-color: #fff;
     padding: 1.25rem;
