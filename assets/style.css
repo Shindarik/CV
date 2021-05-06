@@ -47,6 +47,11 @@ body{
     cursor: url("../images/cursor.png"), pointer;
     scrollbar-color: #111 white;
     scrollbar-width: thin; 
+    overflow-y: auto;
+    overflow-x: hidden;
+    -ms-scroll-snap-type: y mandatory;
+        scroll-snap-type: y mandatory;
+    -webkit-overflow-scrolling: touch;
 }
 
 body.active{
@@ -210,6 +215,7 @@ nav li a:hover{
     align-items: center;
     position: relative;
     overflow: hidden;
+    scroll-snap-align: center;
 }
 
 header, section{
@@ -568,13 +574,15 @@ header .textMouse span{
     width: 70%;
     height: 8vw;
     background-color: rgba(0, 0, 0, 0.9);
-    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
     padding: 0rem 1rem;
     z-index: 5;
     display: flex;
     justify-content: center;
     align-items: center;
-    clip-path: polygon(40% 20%, 100% 20%, 100% 80%, 0 80%, 0 20%, 25% 20%, 50% 0);
+    -webkit-clip-path: polygon(40% 20%, 100% 20%, 100% 80%, 0 80%, 0 20%, 25% 20%, 50% 0);
+            clip-path: polygon(40% 20%, 100% 20%, 100% 80%, 0 80%, 0 20%, 25% 20%, 50% 0);
     opacity: 0;
     transition: all .5s ease;
 }
@@ -761,7 +769,8 @@ header .textMouse span{
     bottom: 0;
     left: 0;
     width: 200%;
-    animation: waveX 7s linear infinite, waveY 7s ease infinite;
+    -webkit-animation: waveX 7s linear infinite, waveY 7s ease infinite;
+            animation: waveX 7s linear infinite, waveY 7s ease infinite;
     z-index: 2;
 }
 
@@ -772,7 +781,8 @@ header .textMouse span{
     left: 0%;
     width: 200%;
     transform: scaleX(-1);
-    animation: waveX2 10s linear infinite, waveY 10s ease infinite;
+    -webkit-animation: waveX2 10s linear infinite, waveY 10s ease infinite;
+            animation: waveX2 10s linear infinite, waveY 10s ease infinite;
     z-index: 1;
 }
 
@@ -782,8 +792,19 @@ header .textMouse span{
     bottom: 0;
     left: 0%;
     width: 200%;
-    animation: waveX 20s linear infinite, waveY 15s ease infinite;
+    -webkit-animation: waveX 20s linear infinite, waveY 15s ease infinite;
+            animation: waveX 20s linear infinite, waveY 15s ease infinite;
     z-index: 1;
+}
+
+
+@-webkit-keyframes waveY{
+    0%, 100%{
+        bottom: 0%;
+    }
+    50%{
+        bottom: -10%;
+    }
 }
 
 
@@ -796,12 +817,30 @@ header .textMouse span{
     }
 }
 
+@-webkit-keyframes waveX{
+    0%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-50%);
+    }
+}
+
 @keyframes waveX{
     0%{
         transform: translateX(0%);
     }
     100%{
         transform: translateX(-50%);
+    }
+}
+
+@-webkit-keyframes waveX2{
+    0%{
+        transform: translateX(0%) scaleX(-1);
+    }
+    100%{
+        transform: translateX(-50%) scaleX(-1);
     }
 }
 
@@ -955,12 +994,14 @@ header .textMouse span{
 
 .op img{
     border-radius: 43% 57% 62% 38% / 69% 54% 46% 31%;
-    animation: morph calc(var(--i) * 5s) ease infinite;
+    -webkit-animation: morph calc(var(--i) * 5s) ease infinite;
+            animation: morph calc(var(--i) * 5s) ease infinite;
 }
 
 #logoHelpMMI{
     border-radius: 0%;
-    animation: none;
+    -webkit-animation: none;
+            animation: none;
 }
 
 #s4{
@@ -1091,7 +1132,8 @@ form{
     height: 25vh;
     background-color: #8f1feb;
     border-radius: 43% 57% 62% 38% / 69% 54% 46% 31%;
-    animation: morph 10s ease infinite;
+    -webkit-animation: morph 10s ease infinite;
+            animation: morph 10s ease infinite;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1107,7 +1149,27 @@ form{
     height: 50vh;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 43% 57% 62% 38% / 69% 54% 46% 31%;
-    animation: morph 15s ease infinite;
+    -webkit-animation: morph 15s ease infinite;
+            animation: morph 15s ease infinite;
+}
+
+
+@-webkit-keyframes morph {
+    from {
+        border-radius: 43% 57% 62% 38% / 69% 54% 46% 31%;
+    }
+
+    25% {
+        border-radius: 25% 75% 46% 54% / 42% 46% 54% 58%;
+    }
+
+    50% {
+        border-radius: 39% 61% 32% 68% / 59% 34% 66% 41%;
+    }
+
+    to {
+        border-radius: 43% 57% 62% 38% / 69% 54% 46% 31%;
+    }
 }
 
 
