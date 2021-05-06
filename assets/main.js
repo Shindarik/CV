@@ -57,7 +57,9 @@ window.addEventListener("resize", function () {
 });
 
 window.addEventListener("scroll", function (e) {
+
     header.style.transform = `translateY(${window.scrollY * 0.5}px)`;
+
     if (ElementVue(section1) == true) {
         setTimeout(() => {
             moiPrincipal.style.opacity = 1;
