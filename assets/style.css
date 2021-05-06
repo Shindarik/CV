@@ -64,8 +64,7 @@ body.active {
     align-items: center;
     position: fixed;
     top: 20px;
-    margin-right: 20px;
-    right: 0px;
+    right: 20px;
     width: 60px;
     height: 60px;
     z-index: 10000;
