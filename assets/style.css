@@ -371,7 +371,7 @@ header h1 {
 
 header a svg {
     fill: white;
-    transform:  translateX(-50%) scale(3);
+    transform: translateX(-50%) scale(3);
     position: absolute;
     left: 50%;
     bottom: 50px;
@@ -390,7 +390,7 @@ header .textMouse {
     user-select: none;
     pointer-events: none;
     -webkit-animation: rotateInfinite 7.5s linear infinite;
-    animation: rotateInfinite 7.5s linear infinite;
+            animation: rotateInfinite 7.5s linear infinite;
 }
 
 header .textMouse span {
