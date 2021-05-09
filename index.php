@@ -376,7 +376,7 @@
 
         <div class="mailFoot">
             <img src="./images/enveloppe.svg" alt="Icone d'une enveloppe">
-            <p> : mateosuslu.pro@gmail.com</p>
+            <p>mateosuslu.pro@gmail.com</p>
         </div>
 
         <div>
