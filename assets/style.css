@@ -1476,6 +1476,10 @@ footer a {
 
 @media screen and (max-width : 1100px) {
 
+    .description {
+        font-size: 1rem;
+    }
+
     .op.split1,
     .op.split2,
     .parcour {
@@ -1494,6 +1498,10 @@ footer a {
 
     .mailFoot img {
         display: none;
+    }
+
+    form {
+        max-width: 500px;
     }
 }
 
@@ -1525,6 +1533,7 @@ footer a {
 
     form {
         height: 60%;
+        line-height: 50%;
     }
 }
 
