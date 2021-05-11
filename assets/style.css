@@ -1545,10 +1545,6 @@ footer a {
 
 @media screen and (max-width : 690px) {
 
-    nav li a {
-        font-size: 2rem;
-    }
-
     .comp.active .bar {
         display: none;
     }
