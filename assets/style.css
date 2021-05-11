@@ -28,6 +28,7 @@ html {
     scroll-behavior: smooth;
     scrollbar-color: white #111;
     scrollbar-width: thin;
+    overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
