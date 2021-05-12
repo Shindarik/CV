@@ -11,7 +11,7 @@
         href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link rel="shortcut icon" href="./images/logoCV.svg" type="image/x-icon">
-    <meta name="description" content="Voici le CV intéractif de Suslu Matéo">
+    <meta name="description" content="Voici le CV interactif de Suslu Matéo">
     <title>CV - Suslu Matéo</title>
 </head>
 
@@ -64,7 +64,7 @@
             <p class="description">Bonjour ! Je m’appelle <span>Matéo Suslu</span> et je suis actuellement en première
                 année d'un <span>DUT Métiers du Multimédia et de l’Internet</span> à l’IUT de Champs-sur-Marne. Je suis
                 passionné à la fois par le <span>développement web</span> et par l'<span>audiovisuel</span>. À travers
-                ce CV intéractif, j’espère vous convaincre de mes diverses capacités que ce soit dans l'aspect créatif
+                ce CV interactif, j’espère vous convaincre de mes diverses capacités que ce soit dans l'aspect créatif
                 et développement. Si vous voulez en apprendre plus n'hésitez pas à découvrir le reste de la page !</p>
             <div class="moiPrincipal">
                 <div class="cvText">

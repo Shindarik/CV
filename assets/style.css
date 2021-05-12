@@ -1573,10 +1573,35 @@ footer a {
     }
 }
 
+@media screen and (max-width : 570px) {
+
+    .comp {
+        height: 20%;
+    }
+
+    .comp h2 {
+        font-size: 1.25rem;
+    }
+}
+
+@media screen and (max-width : 500px) {
+
+    .comp h2 {
+        font-size: 1rem;
+    }
+}
+
 @media screen and (max-width : 460px) {
 
     nav li a {
         font-size: 2.75rem;
+    }
+}
+
+@media screen and (max-width : 420px) {
+
+    .comp h2 {
+        font-size: .75rem;
     }
 }
 
