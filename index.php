@@ -274,7 +274,7 @@
                 </div>
                 <div class="op split2">
                     <div class="parcour" data-split="2">
-                        <h3>Auxiliaire au Service Immatricualtions Étrangères</h3>
+                        <h3>Auxiliaire au Service Immatriculations Étrangères</h3>
                         <i>Centre des impôts de Noisy-le-Grand</i>
                         <span>2020</span>
                         <p>C'est durant les grandes vacances suivant mon BAC que j'ai pu travailler <b>1 mois</b> au
@@ -345,9 +345,16 @@
 
             <?php
 
+                include __DIR__ . '/assets/connect.php';
+
                 if (isset($_POST['mail']) && isset($_POST['nom']) && isset($_POST['message'])) {
 
                     $retour = mail('mateosuslu.pro@gmail.com', 'CV Contact : '.$_POST['nom'], $_POST['message'], 'From: '.$_POST['mail']);
+
+                    $sql = "INSERT INTO cv_contact(mail, nom, message) VALUES (:mail, :nom, :message)";
+                    $req = $link -> prepare($sql);
+                    $req -> execute(array(":mail" => $_POST["mail"], ":nom" => $_POST["nom"], ":message" => $_POST["message"]));
+                    $req = null;
 
                     if($retour){
                         echo '<script>alert("Message Envoyé !")</script>';
